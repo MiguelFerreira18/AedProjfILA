@@ -1,18 +1,26 @@
-import javax.print.Doc;
-
 public class Impressora
 {
+    //variaveis
     private Impressora next;
     private int idImp;
     private Documento first;
     private int docLimite;
 
-
+    /**
+     * construtor
+     * @param idImp id
+     */
     public Impressora(int idImp)
     {
         this.idImp = idImp;
         docLimite = Integer.MAX_VALUE;
     }
+
+    /**
+     * construtor
+     * @param idImp id
+     * @param docLimite limite dos jobs
+     */
     public Impressora(int idImp,int docLimite)
     {
         this.idImp = idImp;
@@ -30,21 +38,10 @@ public class Impressora
     public int getIdImp() {
         return idImp;
     }
-
-    public void setIdImp(int idImp) {
-        this.idImp = idImp;
-    }
-
-    public Documento getFirst() {
-        return first;
-    }
-    public void setFirst(Documento first) {
-        this.first = first;
-    }
-
-
-
-    public void printTodosOsDocs()
+    /**
+     * Este metodo imprime todos os Jobs
+     */
+    public void printTodosOsJobs()
     {
         if(first==null)
             {
@@ -58,9 +55,12 @@ public class Impressora
                     temp=temp.getNext();
                 }
                 first=null;
-            }
+            }//fim do else
+    }//fim do metodo
 
-    }
+    /**
+     * Este metodo processa o job com menos paginas
+     */
     public void processDoc()
     {
         if(first==null)
@@ -73,9 +73,16 @@ public class Impressora
                 System.out.println(first);
                 first=first.getNext();
             }
-        }
-    }
-    public void addDoc(String titulo,int id ,int paginas)
+        }//fim do else
+    }//fim do metodo
+
+    /**
+     * Este metodo adiciona um job á lista da impressora
+     * @param titulo titulo do job
+     * @param id  id do job
+     * @param paginas numero de paginas do job
+     */
+    public void addJob(String titulo, int id , int paginas)
     {
         if(docLimite==0)
             return;
@@ -117,8 +124,8 @@ public class Impressora
                         docLimite--;
                     }
 
-                }
-            }
-        }
-    }
-}
+                }//fim do else
+            }//fim do else
+        }//fim do else
+    }//fim do metodo
+}//fim da classe

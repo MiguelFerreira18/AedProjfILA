@@ -32,10 +32,10 @@ public class Main
                             int id = in.nextInt();
                             System.out.print("Paginas:");
                             int numPag = in.nextInt();
-                            gf.insereDocumento(title,imp, id, numPag);
+                            gf.insereJob(title,imp, id, numPag);
                             break;
                         case 2:
-                            gf.processaDoc(imp);
+                            gf.processaJob(imp);
                             break;
                         case 3:
                             gf.printAll(imp);
@@ -88,7 +88,7 @@ public static void iniciaImp()
     gf.adicionaImpressora(3);
     gf.adicionaImpressora(4);
     gf.adicionaImpressora(5);
-}
+}//fim do menu
     public static void impMenu(int imp)
     {
         if(imp==0 || imp>5)
@@ -137,9 +137,9 @@ public static void iniciaImp()
                     System.out.println("4-Sair da impressora");
                     System.out.println("0-Sair do programa");
                     break;
-            }
-        }
-    }
+            }//fim do switch
+        }//fim do else
+    }//fim do metodo
     public static void impOpc()
     {
         System.out.println("1-Impressora dos alunos");
@@ -148,4 +148,4 @@ public static void iniciaImp()
         System.out.println("4-Impressora dos continuos");
         System.out.println("5-Impressora dos Reitores");
     }//fim do metodo
-}
+}//fim da classe
