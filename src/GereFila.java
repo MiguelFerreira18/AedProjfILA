@@ -17,11 +17,10 @@ public class GereFila
         else
         {
             Impressora temp = firstImp;
-            if(newImp.getIdImp()< firstImp.getIdImp())
+            if(newImp.getIdImp() < firstImp.getIdImp())
             {
                 newImp.setNext(firstImp);
                 firstImp=newImp;
-
             }else
             {
                 while (temp.getNext() != null && newImp.getIdImp() > temp.getNext().getIdImp())
@@ -78,7 +77,7 @@ public class GereFila
         {
             if(temp.getIdImp() ==idImpressora)
             {
-                temp.processDoc();
+                temp.processJob();
             }
             temp=temp.getNext();
         }//fim do while

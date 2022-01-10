@@ -1,7 +1,7 @@
-public class Documento
+public class Job
 {
     //variaveis
-    private Documento next;
+    private Job next;
     private String titulo;
     private int id;
     private int paginas;
@@ -12,17 +12,17 @@ public class Documento
      * @param id id do job
      * @param paginas numero de paginas
      */
-    public Documento(String titulo, int id, int paginas) {
+    public Job(String titulo, int id, int paginas) {
         this.titulo = titulo;
         this.id = id;
         this.paginas = paginas;
     }
 
-    public Documento getNext() {
+    public Job getNext() {
         return next;
     }
 
-    public void setNext(Documento next) {
+    public void setNext(Job next) {
         this.next = next;
     }
 

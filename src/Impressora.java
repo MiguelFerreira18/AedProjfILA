@@ -3,8 +3,8 @@ public class Impressora
     //variaveis
     private Impressora next;
     private int idImp;
-    private Documento first;
-    private int docLimite;
+    private Job first;
+    private int jobLimite;
 
     /**
      * construtor
@@ -13,7 +13,7 @@ public class Impressora
     public Impressora(int idImp)
     {
         this.idImp = idImp;
-        docLimite = Integer.MAX_VALUE;
+        jobLimite = Integer.MAX_VALUE;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Impressora
     public Impressora(int idImp,int docLimite)
     {
         this.idImp = idImp;
-        this.docLimite=docLimite;
+        this.jobLimite =docLimite;
     }
 
     public Impressora getNext() {
@@ -45,10 +45,10 @@ public class Impressora
     {
         if(first==null)
             {
-                System.out.println("não tem documentos");
+                System.out.println("não tem jobs");
             }else
             {
-                Documento temp = first;
+                Job temp = first;
                 while(temp!=null)
                 {
                     System.out.println(temp.getTitulo()+" tem- " + temp.getPaginas() + " paginas");
@@ -61,7 +61,7 @@ public class Impressora
     /**
      * Este metodo processa o job com menos paginas
      */
-    public void processDoc()
+    public void processJob()
     {
         if(first==null)
         {
@@ -84,46 +84,43 @@ public class Impressora
      */
     public void addJob(String titulo, int id , int paginas)
     {
-        if(docLimite==0)
+        if(jobLimite ==0)
             return;
         if(first==null)
         {
-            Documento doc = new Documento(titulo,id,paginas);
-            first=doc;
-            docLimite--;
+            Job job = new Job(titulo,id,paginas);
+            first=job;
+            jobLimite--;
         }else
         {
-            Documento doc = new Documento(titulo,id,paginas);
-            Documento temp = first;
-            while(temp.getNext()!=null && !temp.getTitulo().equalsIgnoreCase(doc.getTitulo()))
+            Job job = new Job(titulo,id,paginas);
+            Job temp = first;
+            while(temp.getNext()!=null && !temp.getTitulo().equalsIgnoreCase(job.getTitulo()))
             {
                 temp=temp.getNext();
             }
-            if (temp.getTitulo().equalsIgnoreCase(doc.getTitulo()))
+            if (temp.getTitulo().equalsIgnoreCase(job.getTitulo()))
             {
                 System.out.println("Esse job já existe");
             }else
             {
-
-                if (doc.getPaginas() < first.getPaginas())
+                if (job.getPaginas() < first.getPaginas())
                 {
-                    doc.setNext(first);
-                    first = doc;
-                    docLimite--;
+                    job.setNext(first);
+                    first = job;
+                    jobLimite--;
                 } else
                 {
                     temp = first;
-                    while (temp.getNext() != null && doc.getPaginas() > temp.getNext().getPaginas())
+                    while (temp.getNext() != null && job.getPaginas() > temp.getNext().getPaginas())
                     {
                         temp = temp.getNext();
                     }
-                    if (temp != null && temp.getTitulo() != doc.getTitulo())
-                    {
-                        doc.setNext(temp.getNext());
-                        temp.setNext(doc);
-                        docLimite--;
+                    if (temp != null && temp.getTitulo() != job.getTitulo()) {
+                        job.setNext(temp.getNext());
+                        temp.setNext(job);
+                        jobLimite--;
                     }
-
                 }//fim do else
             }//fim do else
         }//fim do else
