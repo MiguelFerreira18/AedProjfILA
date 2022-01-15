@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Main
-{
+public class Main{
     static GereFila gf = new GereFila();
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args)
@@ -60,27 +59,7 @@ public class Main
                             System.out.println("Qual ação deseja fazer");
                             opDentroDaImp = in.nextInt();
                 }
-        }
-//fim do else
-    // fim do metodo
-        //    {
-//        gf.adicionaImpressora(1);
-//        gf.adicionaImpressora(5);
-//        gf.adicionaImpressora(3);
-//        gf.adicionaImpressora(4);
-//        gf.adicionaImpressora(2);
-//        gf.adicionaImpressora(6);
-//        gf.insereDocumento("casfdoisa",1,10,5);
-//        gf.insereDocumento("csdfoisa",2,10,10);
-//        gf.insereDocumento("cosdfisa",5,10,15);
-//        gf.insereDocumento("coisdfvsdfsa",3,10,20);
-//        gf.insereDocumento("cosdcvsdisa",5,10,3);
-//
-//
-//gf.processaDoc(1);
-//       gf.printAll();
-//       gf.printAll();
-        //gf.printImpressoras();
+        }//fim do metodo main
 public static void iniciaImp()
 {
     gf.adicionaImpressora(1);
@@ -88,7 +67,7 @@ public static void iniciaImp()
     gf.adicionaImpressora(3);
     gf.adicionaImpressora(4);
     gf.adicionaImpressora(5);
-}//fim do menu
+}//fim metodo
     public static void impMenu(int imp)
     {
         if(imp==0 || imp>5)

@@ -1,8 +1,7 @@
-public class Impressora
-{
+public class Impressora {
     //variaveis
     private Impressora next;
-    private int idImp;
+    private final int idImp;
     private Job first;
     private int jobLimite;
 

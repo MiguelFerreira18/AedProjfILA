@@ -1,5 +1,4 @@
-public class GereFila
-{
+public class GereFila  {
     //varivaveis
     private Impressora firstImp;
 
