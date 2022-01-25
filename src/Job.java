@@ -34,4 +34,8 @@ public class Job
         return paginas;
     }
 
+    @Override
+    public String toString() {
+        return ", titulo='" + titulo +", paginas=" + paginas ;
+    }
 }

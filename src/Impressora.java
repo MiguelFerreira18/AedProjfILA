@@ -87,6 +87,7 @@ public class Impressora {
             return;
         if(first==null)
         {
+            System.out.println("adicionou o job com o titulo - "+ titulo + " na primeira posição");
             Job job = new Job(titulo,id,paginas);
             first=job;
             jobLimite--;
@@ -105,6 +106,7 @@ public class Impressora {
             {
                 if (job.getPaginas() < first.getPaginas())
                 {
+                    System.out.println("adicionou Job com o titulo - " + titulo);
                     job.setNext(first);
                     first = job;
                     jobLimite--;
@@ -116,6 +118,7 @@ public class Impressora {
                         temp = temp.getNext();
                     }
                     if (temp != null && temp.getTitulo() != job.getTitulo()) {
+                        System.out.println("adicionou Job com o titulo - " + titulo);
                         job.setNext(temp.getNext());
                         temp.setNext(job);
                         jobLimite--;
