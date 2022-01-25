@@ -97,7 +97,7 @@ public class GereFila  {
         {
             System.out.println(temp.getIdImp() + ":");
             temp.printTodosOsJobs();
-            System.out.println("___________");
+            System.out.println("______________________________________________ ");
         }
     }//fim do metodo
 }//fim da classe
